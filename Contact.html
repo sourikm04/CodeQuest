@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Quest 2025 - Contact</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Contact.css">
+</head>
+<body>
+
+    <header>
+        <img class="Logo" src="IMAGES/logo.png" alt="Logo">
+        <button class="menu-toggle">&#9776;</button>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="Venue.html">Venue</a>
+            <a href="Schedule.html">Schedule</a>
+            <a href="Rules.html">Rules & Eligibility</a>
+            <a href="Register.html">Register</a>
+            <a href="Contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1 class="page-title">Get in Touch</h1>
+        
+        <div class="contact-grid">
+            <div class="contact-card" style="animation-delay: 0.2s;">
+                <div class="contact-icon">📍</div>
+                <h3>Visit Us</h3>
+                <p>Tech Innovation Plaza<br>
+                24 Park Street<br>
+                Kolkata, West Bengal 700016</p>
+            </div>
+
+            <div class="contact-card" style="animation-delay: 0.4s;">
+                <div class="contact-icon">📞</div>
+                <h3>Call Us</h3>
+                <p>+91 98765 43210<br>
+                +91 12345 67890</p>
+            </div>
+
+            <div class="contact-card" style="animation-delay: 0.6s;">
+                <div class="contact-icon">✉️</div>
+                <h3>Email Us</h3>
+                <p>support@codequest.in<br>
+                queries@codequest.in</p>
+            </div>
+            <div class="contact-card" style="animation-delay: 0.8s;">
+                <h3>Send Message</h3>
+                <form class="contact-form">
+                    <input type="text" class="form-input" placeholder="Your Name" required>
+                    <input type="email" class="form-input" placeholder="Your Email" required>
+                    <textarea class="form-input" placeholder="Your Message" rows="4" required></textarea>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+document.querySelector('.menu-toggle').addEventListener('click', function() {
+        document.querySelector('.nav-links').classList.toggle('show');
+        document.querySelector('.container').classList.toggle('slide-down');
+        }); 
+
+        document.querySelectorAll('.contact-card').forEach((card, index) => {
+            card.style.animationDelay = `${index * 0.2 + 0.2}s`;
+        });
+
+        document.querySelector('form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = e.target.querySelector('.submit-btn');
+            btn.innerHTML = 'Sending...';
+            
+            setTimeout(() => {
+                btn.innerHTML = '✓ Sent Successfully!';
+                btn.style.background = '#4CAF50';
+                setTimeout(() => {
+                    btn.innerHTML = 'Send Message';
+                    btn.style.background = 'linear-gradient(45deg, #00eeff, #6f00ff)';
+                }, 2000);
+            }, 1500);
+        });
+    </script>
+</body>
+</html>
