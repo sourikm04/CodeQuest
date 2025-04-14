@@ -257,10 +257,6 @@ h2 {
 }
 
 @media (max-width: 480px) {
-    body {
-        padding: 1rem;
-        overflow-x: hidden;
-    }
     
     .rules-grid {
         grid-template-columns: 1fr;
@@ -279,9 +275,6 @@ h2 {
 }
 
 @media (max-width: 320px) {
-    body {
-        padding: 1rem 0;
-    }
     
     .rule-card {
         padding: 1rem;
